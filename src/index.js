@@ -92,16 +92,15 @@ function chooseHole(holes) {
 * return the timeoutId if the game continues or the string "game stopped"
 * if the game is over.
 *
-*  // if time > 0:
-*  //   timeoutId = showUp()
-*  //   return timeoutId
-*  // else
-*  //   gameStopped = stopGame()
-*  //   return gameStopped
-*
 */
 function gameOver() {
-  // TODO: Write your code here
+  if (time > 0) {         // if the timer is over 0 call showUp and return the timeoutID
+    timeoutId = showUp()
+    return timeoutId
+  }
+  else
+    gameStopped = stopGame()  // if the timer has hit 0, stop the game
+    return gameStopped
   
 }
 
