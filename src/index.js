@@ -20,7 +20,7 @@ let difficulty = "hard";
  *
  */
 function randomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min; // Returns a random integer between min and max
 }
 
 /**
@@ -40,11 +40,11 @@ function randomInteger(min, max) {
  */
 function setDelay(difficulty) {
   if (difficulty === "easy") {
-    return 1500; // 1.5 seconds
+    return 1500; // returns difficulty setting of 1.5 seconds
   } else if (difficulty === "normal") {
-    return 1000; // 1 second
+    return 1000; // returns difficulty setting of 1 second
   } else if (difficulty === "hard") {
-    return randomInteger(600, 1200); // Random integer between 600 and 1200 milliseconds
+    return randomInteger(600, 1200); // Calls randomInteger function to return random integer between 600 and 1200 milliseconds
   } 
   }
 
