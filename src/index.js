@@ -94,14 +94,13 @@ function chooseHole(holes) {
 *
 */
 function gameOver() {
-  if (time > 0) {         // if the timer is over 0 call showUp and return the timeoutID
-    timeoutId = showUp()
-    return timeoutId
+  if(time > 0) {         // if the timer is over 0 call showUp and return the timeoutID
+    let timeoutId = showUp();
+    return timeoutId;
+  } else {
+    let gameStopped = stopGame();  // if the timer has hit 0, stop the game
+    return gameStopped;
   }
-  else
-    gameStopped = stopGame()  // if the timer has hit 0, stop the game
-    return gameStopped
-  
 }
 
 /**
