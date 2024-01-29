@@ -1,8 +1,8 @@
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
-const score = document.querySelector('.score'); // Use querySelector() to get the score element
-const timerDisplay = document.querySelector('.timer'); // use querySelector() to get the timer element.
+const score = document.querySelector('#score'); // Use querySelector() to get the score element
+const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 
 let time = 0;
 let timer;
@@ -94,14 +94,13 @@ function chooseHole(holes) {
 *
 */
 function gameOver() {
-  let timeoutId; 
-  if (time > 0) {
+    if (time > 0) {
     // If there is still time, call showUp() to set a different delay and a different hole
-    timeoutId = showUp(); 
+    let timeoutId = showUp(); 
     return timeoutId;
   } else {
     // If the timer has hit 0, stop the game
-    gameStopped = stopGame(); 
+    let gameStopped = stopGame(); 
     return gameStopped;
   }
 }
@@ -149,7 +148,7 @@ function showAndHide(hole, delay){
 *
 */
 function toggleVisibility(hole){
-    hole.classList.toggle('show');
+    hole.classList.toggle("show");
   // adds hole.classList.toggle so that it adds or removes the 'show' class.
     return hole;
 }
@@ -284,9 +283,6 @@ function stopGame(){
 function startGame(){
   setDuration(10);
   showUp();
-  startTimer();
-  setEventListeners()
-  console.log("game started")
   return "game started";
 }
 
