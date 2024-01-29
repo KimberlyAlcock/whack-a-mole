@@ -4,11 +4,11 @@ const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 
+
 let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "easy";
 
 /**
  * Generates a random integer within a range. 
@@ -22,6 +22,22 @@ let difficulty = "easy";
 function randomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; // Returns a random integer between min and max
 }
+
+  /**
+ * Listens for the chosen difficulty parameter and calls setDelay().
+ */
+
+  function difficultySetting() {
+    const difficultySelect = document.getElementById('difficultySelect');
+    const selectedDifficulty = difficultySelect.value;
+
+    // Call setDelay with the selected difficulty and log the result
+    const delay = selectedDifficulty
+    return delay
+  }
+
+  // Attach the event listener to the difficulty select element
+  document.getElementById('difficultySelect').addEventListener('change', difficultySetting);
 
 /**
  * Sets the time delay given a difficulty parameter.
@@ -47,6 +63,7 @@ function setDelay(difficulty) {
     return randomInteger(600, 1200); // Calls randomInteger function to return random integer between 600 and 1200 milliseconds
   } 
   }
+
 
 
 /**
@@ -115,7 +132,8 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = setDelay(difficulty); // calls the setDelay() funciton
+  const difficulty = difficultySetting(); // creates a const using the diffi
+  const delay = setDelay(difficulty); // calls the setDelay() function
   const hole = chooseHole(holes);  // calls the chooseHole() function
   return showAndHide(hole, delay);
 }
@@ -278,6 +296,7 @@ function startGame(){
 }
 
 startButton.addEventListener("click", startGame);
+
 
 
 // Please do not modify the code below.
