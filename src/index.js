@@ -94,11 +94,13 @@ function chooseHole(holes) {
 *
 */
 function gameOver() {
-  if(time > 0) {         // if the timer is over 0 call showUp and return the timeoutID
-    let timeoutId = showUp();
+  if (time > 0) {
+    // If there is still time, call showUp() to set a different delay and a different hole
+    timeoutId = showUp(); // Assuming showUp() is defined elsewhere
     return timeoutId;
   } else {
-    let gameStopped = stopGame();  // if the timer has hit 0, stop the game
+    // If the timer has hit 0, stop the game
+    gameStopped = stopGame(); 
     return gameStopped;
   }
 }
@@ -162,8 +164,17 @@ function toggleVisibility(hole){
 *
 */
 function updateScore() {
-  // TODO: Write your code here
+  // Increment the points global variable by 1 point
+  points += 1; 
 
+  // Update score.textContent with points.
+  const scoreElement = document.getElementById('score'); 
+  if (scoreElement) {
+    scoreElement.textContent = points;
+  } else {
+    console.error("Score element not found");
+  }
+  // Return points;  
   return points;
 }
 
@@ -175,9 +186,18 @@ function updateScore() {
 *
 */
 function clearScore() {
-  // TODO: Write your code here
-  // points = 0;
-  // score.textContent = points;
+  // Set the points global variable to 0
+  points = 0;
+
+  // Update score.textContent with points.
+  const scoreElement = document.getElementById('score'); 
+  if (scoreElement) {
+    scoreElement.textContent = points;
+  } else {
+    console.error("Score element not found");
+  }
+
+  // Return points
   return points;
 }
 
@@ -187,9 +207,10 @@ function clearScore() {
 *
 */
 function updateTimer() {
-  // TODO: Write your code here.
-  // hint: this code is provided to you in the instructions.
-  
+  if (time > 0){
+    time -= 1;
+    timerDisplay.textContent = time;
+  }  
   return time;
 }
 
@@ -200,8 +221,7 @@ function updateTimer() {
 *
 */
 function startTimer() {
-  // TODO: Write your code here
-  // timer = setInterval(updateTimer, 1000);
+  timer = setInterval(updateTimer, 1000);
   return timer;
 }
 
@@ -214,8 +234,8 @@ function startTimer() {
 *
 */
 function whack(event) {
-  // TODO: Write your code here.
   // call updateScore()
+  updateScore();
   return points;
 }
 
@@ -225,8 +245,9 @@ function whack(event) {
 * for an example on how to set event listeners using a for loop.
 */
 function setEventListeners(){
-  // TODO: Write your code here
-
+  moles.forEach(
+    mole => mole.addEventListener('click', whack)
+  );
   return moles;
 }
 
@@ -262,6 +283,9 @@ function stopGame(){
 function startGame(){
   setDuration(10);
   showUp();
+  startTimer();
+  setEventListeners()
+  console.log("game started")
   return "game started";
 }
 
