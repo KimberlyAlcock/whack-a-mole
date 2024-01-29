@@ -8,7 +8,7 @@ let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "hard";
+let difficulty = "easy";
 
 /**
  * Generates a random integer within a range. 
@@ -165,16 +165,10 @@ function toggleVisibility(hole){
 */
 function updateScore() {
   // Increment the points global variable by 1 point
-  points += 1; 
+  points ++; 
 
   // Update score.textContent with points.
-  const scoreElement = document.getElementById('score'); 
-  if (scoreElement) {
-    scoreElement.textContent = points;
-  } else {
-    console.error("Score element not found");
-  }
-  // Return points;  
+  score.textContent = points;
   return points;
 }
 
@@ -190,13 +184,7 @@ function clearScore() {
   points = 0;
 
   // Update score.textContent with points.
-  const scoreElement = document.getElementById('score'); 
-  if (scoreElement) {
-    scoreElement.textContent = points;
-  } else {
-    console.error("Score element not found");
-  }
-
+  score.textContent = points;
   // Return points
   return points;
 }
@@ -281,6 +269,8 @@ function stopGame(){
 *
 */
 function startGame(){
+  setEventListeners();
+  startTimer();
   setDuration(10);
   showUp();
   return "game started";
