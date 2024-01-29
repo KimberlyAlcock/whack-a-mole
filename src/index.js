@@ -94,9 +94,10 @@ function chooseHole(holes) {
 *
 */
 function gameOver() {
+  let timeoutId; 
   if (time > 0) {
     // If there is still time, call showUp() to set a different delay and a different hole
-    timeoutId = showUp(); // Assuming showUp() is defined elsewhere
+    timeoutId = showUp(); 
     return timeoutId;
   } else {
     // If the timer has hit 0, stop the game
