@@ -5,17 +5,32 @@
   </head>
   <body>
     <h1 id="title">Aiden's Whack-A-Giraffe</h1>
-    <div>
-      <div>
-        <h2>Click start to play!</h2>
+    <div class="box"> 
+      <div class="button">
+        <button id="start">start</button>
       </div>
-      <div>
-        <h2>score: <span id="score">0</span></h2>
+      <div class="info">
+        <div>
+          <h2>Click start to play!</h2>
+        </div>
+        <div>
+          <h2>score: <span id="score">0</span></h2>
+        </div>
+        <div>
+            <h2><span id="timer">0</span> seconds left.</h2>
+        </div>
       </div>
-      <div>
-          <h2><span id="timer">0</span> seconds left.</h2>
+      <div class="chooser">
+        <label for="difficultySelect">Choose <br>difficulty:</label>
+        <br>
+        <select id="difficultySelect">
+          <option value="easy">Easy</option>
+          <option value="normal">Normal</option>
+          <option value="hard">Hard</option>
+        </select>
       </div>
     </div>
+
     <div class="grid">
       <div id="hole0" class="hole">
         <div id="mole0" class="mole"></div>
@@ -46,16 +61,13 @@
       </div>      
     </div>
 
-      <button id="start">start</button>
-      <label for="difficultySelect">Choose difficulty:</label>
-      <select id="difficultySelect">
-        <option value="easy">Easy</option>
-        <option value="normal">Normal</option>
-        <option value="hard">Hard</option>
-      </select>
+
+
 
     <script src="./src/index.js"></script>
     <footer>
+      <br>
+      <br>
       Background image by <a href="https://www.freepik.com/free-vector/cartoon-jungle-background_14351507.htm#query=jungle%20background&position=2&from_view=keyword&track=ais&uuid=358f303d-9e2b-4cf6-ba2d-90762fec54f3">pikisuperstar</a> and Giraffe image by
       <a href="https://www.freepik.com/free-vector/cute-giraffe-flat-style_30159375.htm#query=giraffe&position=15&from_view=search&track=sph&uuid=dde405c7-0d99-4fbf-9c95-e0a471d4d7cd">brgfx</a> on Freepik  
     </footer>
