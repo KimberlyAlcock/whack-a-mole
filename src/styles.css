@@ -86,3 +86,8 @@ label {
   color: brown;
   font-size: 30px;
 }
+
+footer {
+  text-align: right;
+  color: yellow;
+}
