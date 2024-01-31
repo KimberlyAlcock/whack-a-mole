@@ -65,9 +65,9 @@ h2 {
 
 .mole {
   /*background:url('./assets/giraffe.jpg') bottom center no-repeat;*/
-  background:url('https://github.com/KimberlyAlcock/whack-a-mole/blob/main/assets/giraffe.jpg?raw=true') bottom center no-repeat;
+  background:url('https://github.com/KimberlyAlcock/whack-a-mole/blob/main/assets/giraffe2.png?raw=true') bottom center no-repeat;
   /*background:url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mole.png?raw=true') bottom center no-repeat;*/
-  background-size: 40%;
+  background-size: 30%;
   position: absolute;
   top: 100%;
   width: 100%;
